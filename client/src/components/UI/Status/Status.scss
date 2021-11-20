@@ -1,0 +1,25 @@
+@import '../../../styles/variables';
+
+.status {
+  font-size: 14px;
+  padding: 12px;
+  border-radius: 4px;
+  display: inline-block;
+  &::before {
+    content: "●";
+    display: inline-block;
+    margin-right: 4px;
+  }
+  &--paid {
+    color: #31D6A0;
+    background-color: rgba(#31D6A0, .25);
+  }
+  &--pending {
+    color: #FD8E00;
+    background-color: rgba(#FD8E00, .25);
+  }
+  &--draft {
+    color: #DDE3FA;
+    background-color: rgba(#DDE3FA, .25);
+  }
+}

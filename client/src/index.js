@@ -5,7 +5,7 @@ import { BrowserRouter } from 'react-router-dom'
 import 'normalize.css'
 import 'typeface-spartan'
 
-import './index.scss'
+import './styles/index.scss'
 import App from './components/App'
 
 ReactDOM.render(

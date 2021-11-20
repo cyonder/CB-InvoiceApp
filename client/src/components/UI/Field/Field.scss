@@ -1,0 +1,25 @@
+@import '../../../styles/variables';
+
+.field {
+  display: block;
+  width: 100%;
+  padding: 16px 24px;
+  background-color: $color-background-darker;
+  background-clip: padding-box;
+  border-radius: 4px;
+  border: 1px solid $color-background-dark;
+  color: $color-text;
+  font-weight: 500;
+  outline: none;
+  appearance: none;
+  &:active,
+  &:focus {
+    border-color: $color-primary;
+  }
+}
+.field-label {
+  color: $color-text-helper;
+  font-size: 14px;
+  margin-bottom: 8px;
+  display: inline-block;
+}

@@ -13,7 +13,7 @@ $color-text-helper: #DFE3FA;
 // Background of the App
 $color-background-darkest: #141625;
 
-// Complimentary to "color-background-darkest". For component backgrounds
+// Complimentary to "color-background-darkest". For component and input backgrounds
 $color-background-darker: #1E2139;
 
 /* 
@@ -21,11 +21,3 @@ $color-background-darker: #1E2139;
  * For input border, "+Add New Item", "Edit", "Cancel" buttons
  */
 $color-background-dark: #252945;
-
-body {
-  font-family: 'Spartan', sans-serif;
-  background-color: $color-background-darkest;
-  // .app-container {}
-  // aside.app-sidebar {}
-  // main.app-main {}
-}
