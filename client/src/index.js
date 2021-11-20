@@ -6,7 +6,7 @@ import 'normalize.css'
 import 'typeface-spartan'
 
 import './styles/index.scss'
-import App from './components/App'
+import App from './App'
 
 ReactDOM.render(
   <React.StrictMode>

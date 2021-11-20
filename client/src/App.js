@@ -1,11 +1,13 @@
 import { Routes, Route } from 'react-router-dom'
 
-import Invoices from '../pages/Invoices'
+import Invoices from './pages/Invoices'
+
+import { Sidebar } from './components'
 
 function App() {
   return (
     <div className="app-container">
-      <aside className="app-sidebar"></aside>
+      <Sidebar/>
       <main className="app-main">
         <Routes>
           <Route path="invoices" element={<Invoices/>}/>
