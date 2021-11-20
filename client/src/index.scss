@@ -1,0 +1,31 @@
+$color-primary: #7C5DFA;
+$color-primary-hover: #9277FF;
+
+$color-danger: #EC5757;
+$color-danger-hover: #FF9797;
+
+// For button, title and main texts
+$color-text: #FFFFFF;
+
+// For secondary helper texts and form labels
+$color-text-helper: #DFE3FA;
+
+// Background of the App
+$color-background-darkest: #141625;
+
+// Complimentary to "color-background-darkest". For component backgrounds
+$color-background-darker: #1E2139;
+
+/* 
+ * Complimentary to "color-background-darker". 
+ * For input border, "+Add New Item", "Edit", "Cancel" buttons
+ */
+$color-background-dark: #252945;
+
+body {
+  font-family: 'Spartan', sans-serif;
+  background-color: $color-background-darkest;
+  // .app-container {}
+  // aside.app-sidebar {}
+  // main.app-main {}
+}
