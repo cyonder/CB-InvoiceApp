@@ -1,0 +1,22 @@
+@import "../../styles/variables";
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .empty-state__image {
+    background-image: url("../../assets/illustration-empty.svg");
+    background-repeat: no-repeat;
+    display: block;
+    width: 242px;
+    height: 200px;
+  }
+  h2 {
+    color: $color-text;
+  }
+  small {
+    color: $color-text-helper;
+    width: 250px;
+    text-align: center;
+  }
+}

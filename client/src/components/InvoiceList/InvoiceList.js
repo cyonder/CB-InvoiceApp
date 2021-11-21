@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom'
-
 import { Status } from '../UI'
 import './InvoiceList.scss'
 

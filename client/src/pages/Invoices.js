@@ -1,24 +1,14 @@
 import { useParams } from 'react-router-dom'
 import { Button } from '../components/UI'
-import { InvoiceList } from '../components'
+import { InvoiceList, EmptyState } from '../components'
 import iconPlusPath from '../assets/icon-plus.svg'
 
 import data from '../data'
 
 function Invoices() {
-  const totalInvoices = data.length
+  // const totalInvoices = data.length
+  const totalInvoices = 0
   const { invoiceId } = useParams()
-
-  if (totalInvoices === 0) {
-    return (
-      <div className="page page--invoces">
-        <header className="page__header"></header>
-        <section className="page__body">
-          empty state
-        </section>
-      </div>
-    )
-  }
 
   if (invoiceId) {
     return (
@@ -33,14 +23,14 @@ function Invoices() {
       <header className="page__header">
         <div>
           <h1>Invoices</h1>
-          <small>There are {totalInvoices} total invoices</small>
+          {totalInvoices === 0 ? <small>No invoices</small> : <small>There are {totalInvoices} total invoices</small>}
         </div>
         <div>
           <Button type="button" icon={iconPlusPath}>New Invoice</Button>
         </div>
       </header>
       <section className="page__body">
-        <InvoiceList invoices={data}/>
+        {totalInvoices === 0 ? <EmptyState/> : <InvoiceList invoices={data}/>}
       </section>
     </div>
   )
