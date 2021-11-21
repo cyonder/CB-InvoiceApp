@@ -1,10 +1,14 @@
 @import '../../../styles/variables';
 
 .status {
-  font-size: 14px;
+  font-size: 12px;
+  font-weight: 600;
   padding: 12px;
   border-radius: 4px;
   display: inline-block;
+  white-space: nowrap;
+  text-align: center;
+  text-transform: capitalize;
   &::before {
     content: "●";
     display: inline-block;

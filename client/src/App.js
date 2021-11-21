@@ -10,7 +10,9 @@ function App() {
       <Sidebar/>
       <main className="app-main">
         <Routes>
-          <Route path="invoices" element={<Invoices/>}/>
+          <Route path="invoices" element={<Invoices/>}>
+            <Route path=":invoiceId" element={<Invoices/>}/>
+          </Route>
         </Routes>
       </main>
     </div>

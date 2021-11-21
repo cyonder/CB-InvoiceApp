@@ -26,3 +26,24 @@ body {
 .app-main {
   flex: 1;
 }
+
+.page {
+  width: 750px;
+  margin: 32px auto 0;
+  .page__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: $color-text;
+    margin-bottom: 32px;
+    h1 {
+      margin: 0 0 16px;
+    }
+    small {
+      color: $color-text-helper;
+    }
+  }
+  .page__body {}
+  &.page--invoices {}
+  &.page--invoice {}
+}
