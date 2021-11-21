@@ -27,10 +27,12 @@ body {
   flex: 1;
 }
 
-.page {
+.invoice,
+.invoices {
   width: 750px;
   margin: 32px auto 0;
-  .page__header {
+  .invoice__header,
+  .invoices__header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -43,7 +45,11 @@ body {
       color: $color-text-helper;
     }
   }
-  .page__body {}
+  .invoice__body,
+  .invoices__body {
+    // color: $color-text;
+    // background-color: $color-background-darker;
+  }
   &.page--invoices {}
   &.page--invoice {}
 }

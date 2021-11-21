@@ -1,26 +1,23 @@
 import { useParams } from 'react-router-dom'
 import { Button } from '../components/UI'
-import { InvoiceList, EmptyState } from '../components'
+import { InvoiceList, EmptyState, Invoice } from '../components'
 import iconPlusPath from '../assets/icon-plus.svg'
 
 import data from '../data'
 
 function Invoices() {
-  // const totalInvoices = data.length
-  const totalInvoices = 0
+  const invoices = data
+  const totalInvoices = data.length
   const { invoiceId } = useParams()
 
   if (invoiceId) {
-    return (
-      <div className="page page--invoces">
-        <header className="page__header"></header>
-        <section className="page__body">invoice</section>
-      </div>
-    )
+    // Find the invoice for the relevant id
+    const invoice = invoices.find(invoice => invoice.id === invoiceId)
+    return <Invoice invoice={invoice} />
   }
   return (
-    <div className="page page--invoices">
-      <header className="page__header">
+    <div className="invoices">
+      <header className="invoices__header">
         <div>
           <h1>Invoices</h1>
           {totalInvoices === 0 ? <small>No invoices</small> : <small>There are {totalInvoices} total invoices</small>}
@@ -29,8 +26,8 @@ function Invoices() {
           <Button type="button" icon={iconPlusPath}>New Invoice</Button>
         </div>
       </header>
-      <section className="page__body">
-        {totalInvoices === 0 ? <EmptyState/> : <InvoiceList invoices={data}/>}
+      <section className="invoices__body">
+        {totalInvoices === 0 ? <EmptyState/> : <InvoiceList invoices={invoices}/>}
       </section>
     </div>
   )
