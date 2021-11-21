@@ -5,7 +5,7 @@ import iconPlusPath from '../assets/icon-plus.svg'
 
 import data from '../data'
 
-function Invoices() {
+function Invoices({ setIsDrawerOpen }) {
   const invoices = data
   const totalInvoices = data.length
   const { invoiceId } = useParams()
@@ -23,7 +23,7 @@ function Invoices() {
           {totalInvoices === 0 ? <small>No invoices</small> : <small>There are {totalInvoices} total invoices</small>}
         </div>
         <div>
-          <Button type="button" icon={iconPlusPath}>New Invoice</Button>
+          <Button type="button" icon={iconPlusPath} onClick={() => setIsDrawerOpen(true)}>New Invoice</Button>
         </div>
       </header>
       <section className="invoices__body">

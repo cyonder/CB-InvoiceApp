@@ -4,7 +4,7 @@ import { Status, Button } from '../UI'
 
 function Invoice ({ invoice }) {
   const navigate = useNavigate()
-  console.log(navigate)
+  console.log(invoice)
 
   const renderItems = () => {
     const invoiceItems = invoice.items

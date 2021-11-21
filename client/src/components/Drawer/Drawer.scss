@@ -1,0 +1,29 @@
+@import "../../styles/variables";
+
+.drawer {
+  position: fixed;
+  top: 0;
+  left: -400px;
+  // left: 100px;
+  z-index: 7777;
+  width: 400px;
+  height: 100vh;
+  background-color: $color-background-darkest;
+  padding: 32px;
+  transform: translateX(0);;
+  transition: transform .3s ease-in-out;
+  &.drawer--open {
+    transform: translateX(500px);
+  }
+  header.drawer__header {}
+  section.drawer__body {
+    height: 80%;
+    overflow: scroll;
+    .address-fields {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: 16px;
+    }
+  }
+  footer.drawer__footer {}
+}

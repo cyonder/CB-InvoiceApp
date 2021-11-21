@@ -12,6 +12,7 @@ aside.sidebar {
   justify-content: space-between;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
+  z-index: 8888;
   .logo {
     background-color: $color-primary;
     border-top-right-radius: 20px;
