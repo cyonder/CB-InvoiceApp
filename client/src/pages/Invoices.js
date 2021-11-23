@@ -3,17 +3,22 @@ import { Button } from '../components/UI'
 import { InvoiceList, EmptyState, Invoice } from '../components'
 import iconPlusPath from '../assets/icon-plus.svg'
 
-import data from '../data'
-
-function Invoices({ setIsDrawerOpen }) {
-  const invoices = data
-  const totalInvoices = data.length
+function Invoices({ setIsDrawerOpen, invoices, setInvoices, setFormValues }) {
+  const totalInvoices = invoices.length
   const { invoiceId } = useParams()
+
+  const handleClick = () => {
+    setFormValues({})
+    setIsDrawerOpen(true)
+  }
 
   if (invoiceId) {
     // Find the invoice for the relevant id
     const invoice = invoices.find(invoice => invoice.id === invoiceId)
-    return <Invoice invoice={invoice} />
+    if (invoice) {
+      return <Invoice invoice={invoice} invoices={invoices} setIsDrawerOpen={setIsDrawerOpen} setInvoices={setInvoices} setFormValues={setFormValues} />
+    }
+    return <span style={{color: 'white'}}>There is no Invoice with this ID</span>
   }
   return (
     <div className="invoices">
@@ -23,7 +28,7 @@ function Invoices({ setIsDrawerOpen }) {
           {totalInvoices === 0 ? <small>No invoices</small> : <small>There are {totalInvoices} total invoices</small>}
         </div>
         <div>
-          <Button type="button" icon={iconPlusPath} onClick={() => setIsDrawerOpen(true)}>New Invoice</Button>
+          <Button type="button" icon={iconPlusPath} onClick={handleClick}>New Invoice</Button>
         </div>
       </header>
       <section className="invoices__body">
@@ -34,18 +39,3 @@ function Invoices({ setIsDrawerOpen }) {
 }
 
 export default Invoices
-
-
-
-
-
-// import { Button, Field, Status } from "../components/UI"
-// import iconPlusPath from '../assets/icon-plus.svg'
-      {/* <Button type="button">Mark as Paid</Button>
-      <Button type="button" icon={iconPlusPath}>New Invoice</Button>
-      <Button type="button" variant="danger">Delete</Button>
-      <Button type="button" variant="dark">Edit</Button>
-      <Field type="text" id="address" name="address" label="Street Address"/>
-      <Status label="paid"/>
-      <Status label="pending"/>
-      <Status label="draft"/> */}

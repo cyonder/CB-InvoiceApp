@@ -84,12 +84,14 @@
         display: flex;
         justify-content: space-between;
         margin-top: 32px;
+        column-gap: 16px;
         .title {
           font-size: 12px;
           color: $color-text-helper;
           margin-bottom: 8px;
         }
         .col-1 {
+          flex: 1;
           & > * {
             margin-bottom: 16px;
           }
@@ -98,6 +100,7 @@
           }
         }
         .col-2 {
+          flex: 1;
           .client-address {
             color: $color-text-helper;
             font-size: 12px;
@@ -111,7 +114,9 @@
             }
           }
         }
-        .col-3 {}
+        .col-3 {
+          flex: 1;
+        }
       }
     }
     .invoice-table {

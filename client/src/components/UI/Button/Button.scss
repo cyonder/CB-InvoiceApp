@@ -28,6 +28,14 @@
       background-color: #FFFFFF;
     }
   }
+  &.button--light {
+    background-color: $color-text;
+    color: $color-background-dark;
+    &:hover {
+      color: $color-text;
+      background-color: $color-background-dark;
+    }
+  }
   &.button--with-icon {
     padding-top: 11px;
     padding-bottom: 11px;

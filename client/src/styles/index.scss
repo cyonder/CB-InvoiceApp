@@ -1,3 +1,4 @@
+@import "~bootstrap/scss/bootstrap";
 @import './variables';
 
 *,
@@ -52,4 +53,174 @@ body {
   }
   &.page--invoices {}
   &.page--invoice {}
+}
+
+.offcanvas {
+  width: 600px;
+  background-color: $color-background-darkest;
+  padding: 32px 32px 32px 47px;
+  left: 85px;
+  .offcanvas-header {
+    .heading {
+      font-weight: 600;
+      color: #FFFFFF;
+      & > span {
+        color: #7E88CE;
+      }
+    }
+  }
+  .offcanvas-body {
+    overflow: scroll;
+    .title {
+      color: $color-primary;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .address-group {
+      display: flex;
+      column-gap: 16px;
+      .form-group {
+        flex: 1;
+      }
+    }
+    .double-column {
+      display: flex;
+      column-gap: 16px;
+      .form-group {
+        flex: 1;
+      }
+    }
+    .items-group {
+      display: flex;
+      align-items: center;
+      column-gap: 16px;
+      .form-group {
+        &:first-child {
+          flex: 3;  
+        }
+        flex: 1;
+      }
+      .delete-button {
+        padding: 4px;
+        height: fit-content;
+        &:hover {
+          background-color: $color-danger;
+        }
+        span {
+          display: block;
+          background-image: url("../assets/icon-delete.svg");
+          background-size: contain;
+          background-repeat: no-repeat;
+          width: 13px;
+          height: 16px;
+        }
+      }
+    }
+    .item-list-title {
+      font-size: 18px;
+      font-weight: 600;
+      color: $color-text-helper;
+      margin-top: 32px;
+      margin-bottom: 8px;
+      display: block;
+    }
+    .new-item-button {
+      background-color: $color-background-darker;
+      border-color: $color-background-darker;
+      color: $color-text;
+      font-size: 12px;
+      padding: 0.563rem 0.75rem;
+      width: 100%;
+      border-radius: 100px;
+      color: $color-text-helper;
+      font-weight: 600;
+      &:focus {
+        box-shadow: none;
+      }
+      &:hover {
+        background-color: $color-background-dark;
+      }
+    }
+  }
+  .offcanvas-footer {
+    display: flex;
+    align-self: flex-end;
+    column-gap: 16px;
+    padding-top: 32px;
+  }
+}
+
+pre {
+  color: white;
+}
+
+.deletion-modal {
+  .modal-content {
+    padding: 32px;
+    background-color: $color-background-darker;
+    .modal-header {
+      color: $color-text;
+      border-bottom: 0;
+    }
+    .modal-body {
+      font-size: 14px;
+      color: $color-text-helper;
+    }
+    .modal-footer {
+      border-top: 0;
+    }
+  }
+}
+
+// Bootstrap Overrides 
+.form-group {
+  margin-bottom: 16px;
+  &.disabled {
+    .form-control {
+      background-color: $color-background-darkest;
+      border-color: $color-background-darkest;
+      padding-left: 0;
+    }
+  }
+}
+.form-label {
+  color: $color-text-helper;
+  font-size: 12px;
+}
+.form-control {
+  background-color: $color-background-darker;
+  border-color: $color-background-dark;
+  color: $color-text;
+  font-size: 12px;
+  padding: 0.563rem 0.75rem;
+  &:focus {
+    box-shadow: none;
+    background-color: $color-background-darker;
+    border-color: $color-primary;
+    color: $color-text;
+  }
+}
+.form-select {
+  background-color: $color-background-darker;
+  border-color: $color-background-dark;
+  color: $color-text;
+  background-image: url("../assets/icon-arrow-down.svg");
+  background-size: 12px;
+  font-size: 12px;
+  padding: 0.563rem 2.25rem 0.563rem 0.75rem;
+  &:focus {
+    box-shadow: none;
+    border-color: $color-primary;;
+  }
+}
+.input-group-text {
+  background-color: $color-background-darker;
+  border-color: $color-background-dark;
+  span {
+    display: block;
+    background-image: url("../assets/icon-calendar.svg");
+    background-repeat: no-repeat;
+    width: 16px;
+    height: 16px;
+  }
 }

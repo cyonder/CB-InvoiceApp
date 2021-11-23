@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import dayjs from 'dayjs'
 import { Status } from '../UI'
 import './InvoiceList.scss'
 
@@ -9,7 +10,7 @@ function InvoiceList ({ invoices }) {
         <span className="item__id">
           <span className="item__id-mark">#</span>{invoice.id}
         </span>
-        <span>Due {invoice.paymentDue}</span>
+        <span>Due {dayjs(invoice.paymentDue).format('DD MMM YYYY')}</span>
         <span className="item__client-name">{invoice.clientName}</span>
         <span className="item__total">{invoice.total}</span>
         <span><Status label={invoice.status}/></span>
